@@ -1,10 +1,12 @@
 require 'net/http'
+require 'dotenv/load'
 #require 'json'
 
 class OverviewController < ApplicationController
   #default_timeout 1 # hard timeout after 1 second
   def api_key
-    ENV["LOLSTATS_API"]
+    ENV["LOLSTATS_API_KEY"]
+    @test_debug = ENV["LOLSTATS_API_KEY"]
   end
 
   def index
@@ -13,6 +15,7 @@ class OverviewController < ApplicationController
   uri = URI(url)
   #uri.read_timeout = 30 # seconds
   response = Net::HTTP.get(uri)
+  @url_debug = url
   @my_hash = response
   end
 
