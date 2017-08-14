@@ -88,4 +88,4 @@ bower.json
 .byebug_history
 
 # Secrets
-key.sh
+.env
