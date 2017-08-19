@@ -30,6 +30,7 @@ gem 'redis' #, '~> 3.0'
 gem 'redis-store'
 gem 'redis-rails'
 gem 'redis-rack-cache'
+gem 'faraday'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', groups: [:development, :test]
