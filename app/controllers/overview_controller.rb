@@ -17,6 +17,7 @@ class OverviewController < ApplicationController
       c.use Faraday::Response::Logger     # log request & response to STDOUT
       c.use Faraday::Adapter::NetHttp     # perform requests with Net::HTTP
     end
+
   response = conn.get url
   @my_hash = response.body
   end
