@@ -1,8 +1,36 @@
+<%= stylesheet_link_tag "skeleton.css", "normalize.css" %>
+<%= favicon_link_tag 'favicon.png' %>
+
 <h1>Overview of champions</h1>
 
 <p>
   <%= @url_debug %>
 </p>
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Champion</th>
+      <th>Armor</th>
+      <th>Armor per level</th>
+      <th>Attack damage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @champs_name %></td>
+      <td><%= @champs_armor %></td>
+      <td><%= @champs_armorperlevel %></td>
+      <td><%= @champs_attackdamage %></td>
+    </tr>
+    <tr>
+      <td><%= @champss_name %></td>
+      <td><%= @champss_armor %></td>
+      <td><%= @champss_armorperlevel %></td>
+      <td><%= @champss_attackdamage %></td>
+    </tr>
+  </tbody>
+</table>
 
 <p style="background-color:#F79F81;">
   <%= @my_hash %>

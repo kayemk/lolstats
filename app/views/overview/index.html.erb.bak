@@ -1,0 +1,25 @@
+<h1>Overview of champions</h1>
+
+<p>
+  <%= @url_debug %>
+</p>
+
+<p style="font-family: Arial, sans-serif;">
+  <%= @champs_name %>
+  <br>
+  <ul>
+  <li>
+  <%= @champs_armor %>
+  </li>
+  <li>
+  <%= @champs_armorperlevel %>
+  </li>
+  <li>
+  <%= @champs_attackdamage %>
+  </li>
+  </ul>
+</p>
+
+<p style="background-color:#F79F81;">
+  <%= @my_hash %>
+</p>
