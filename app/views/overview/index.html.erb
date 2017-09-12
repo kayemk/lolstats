@@ -32,6 +32,19 @@
   </tbody>
 </table>
 
-<p style="background-color:#F79F81;">
-  <%= @my_hash %>
-</p>
+<div style="width:100%;height:30px;background-color:#F79F81;">
+</div>
+
+<table>
+  <tr>
+    <th>field1</th>
+    <th>field2</th>
+  </tr>
+<% # @data.each do |data| %>
+  <tr>
+	  <td> <!-- <#%= data.field1 %> --></td>  
+	  <td> <!-- <#%= data.field2 %> --></td>  
+  </tr>
+<% #end %>
+
+</table>
