@@ -32,6 +32,7 @@ class OverviewController < ApplicationController
   @champss_armor = response.body['data']['Annie']['stats']['armor']
   @champss_armorperlevel = response.body['data']['Annie']['stats']['armorperlevel']
   @champss_attackdamage = response.body['data']['Annie']['stats']['attackdamage']
+
   end
 
 end
