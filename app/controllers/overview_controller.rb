@@ -9,7 +9,7 @@ class OverviewController < ApplicationController
   end
 
   def url
-    "https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=stats&dataById=false&api_key="+api_key
+    "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=stats&dataById=false&api_key="+api_key
   end
 
   def index
@@ -22,6 +22,7 @@ class OverviewController < ApplicationController
 
   response = conn.get url
   @my_hash = response.body
+  @my_hasha = response.body['data'][0]
   # Jax
   @champs_name = response.body['data']['Jax']['name']
   @champs_armor = response.body['data']['Jax']['stats']['armor']
