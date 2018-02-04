@@ -22,7 +22,7 @@ class OverviewController < ApplicationController
 
   response = conn.get url
   @my_hash = response.body
-  @my_hasha = response.body['data'][0]
+  @my_hasha = response.body['data']
   # Jax
   @champs_name = response.body['data']['Jax']['name']
   @champs_armor = response.body['data']['Jax']['stats']['armor']
