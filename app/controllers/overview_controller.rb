@@ -22,17 +22,17 @@ class OverviewController < ApplicationController
 
   response = conn.get url
   @my_hash = response.body
-  @my_hasha = response.body['data']
+  @myhasha = response.body['data']
   # Jax
-  @champs_name = response.body['data']['Jax']['name']
-  @champs_armor = response.body['data']['Jax']['stats']['armor']
-  @champs_armorperlevel = response.body['data']['Jax']['stats']['armorperlevel']
-  @champs_attackdamage = response.body['data']['Jax']['stats']['attackdamage']
+#  @champs_name = response.body['data']['Jax']['name']
+#  @champs_armor = response.body['data']['Jax']['stats']['armor']
+#  @champs_armorperlevel = response.body['data']['Jax']['stats']['armorperlevel']
+#  @champs_attackdamage = response.body['data']['Jax']['stats']['attackdamage']
   # Annie
-  @champss_name = response.body['data']['Annie']['name']
-  @champss_armor = response.body['data']['Annie']['stats']['armor']
-  @champss_armorperlevel = response.body['data']['Annie']['stats']['armorperlevel']
-  @champss_attackdamage = response.body['data']['Annie']['stats']['attackdamage']
+#  @champss_name = response.body['data']['Annie']['name']
+#  @champss_armor = response.body['data']['Annie']['stats']['armor']
+#  @champss_armorperlevel = response.body['data']['Annie']['stats']['armorperlevel']
+#  @champss_attackdamage = response.body['data']['Annie']['stats']['attackdamage']
 
   end
 

@@ -8,56 +8,29 @@
   <%= @url_debug %>
 </p>
 <!--
-<table class="u-full-width">
-  <thead>
-    <tr>
-      <th>Champion</th>
-      <th>Armor</th>
-      <th>Armor per level</th>
-      <th>Attack damage</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @champs_name %></td>
-      <td><%= @champs_armor %></td>
-      <td><%= @champs_armorperlevel %></td>
-      <td><%= @champs_attackdamage %></td>
-    </tr>
-    <tr>
-      <td><%= @champss_name %></td>
-      <td><%= @champss_armor %></td>
-      <td><%= @champss_armorperlevel %></td>
-      <td><%= @champss_attackdamage %></td>
-    </tr>
-  </tbody>
-</table>
-
-<div style="width:100%;height:30px;background-color:#F79F81;">
-</div>
 
 <p>
 	< %= @my_hasha %>
 </p>
+
+<ul>
+  <#% @my_hasha.each do |dataz| %>
+  <li><#%= dataz %> </li>
+  <#% end %>
+</ul>
 -->
 <div style="width:100%;height:30px;background-color:#F79F81;">
 </div>
-
-<ul>
-  <% @my_hasha.each do |dataz| %>
-  <li><%= dataz %> </li>
-  <% end %>
-</ul>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Stat x</th>
   </tr>
-  <% @my_hasha.each do |dataz| %>
+  <% @my_hash.each do |champ| %>
   <tr>
-	  <td> <%= dataz[0] %> </td>
-	  <td> <%= dataz %> </td>
+	  <td> <%= champ %> </td>
+	  <td> <%= champ %> </td>
   </tr>
 <% end %>
 
