@@ -24,13 +24,51 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Stat x</th>
+    <th>Champion</th>
+    <th>armor</th>
+    <th>armorperlevel</th>
+    <th>attackdamage<th>
+    <th>attackdamageperlevel</th>
+    <th>attackrange</th>
+    <th>attackspeedoffset</th>
+    <th>attackspeedperlevel</th>
+    <th>crit</th>
+    <th>critperlevel</th>
+    <th>hp</th>
+    <th>hpperlevel</th>
+    <th>hpregen</th>
+    <th>hpregenperlevel</th>
+    <th>movespeed</th>
+    <th>mp</th>
+    <th>mpperlevel</th>
+    <th>mpregen</th>
+    <th>mpregenperlevel</th>
+    <th>spellblock</th> 
+    <th>spellblockperlevel</th>
   </tr>
-  <% @my_hash.each do |champ| %>
+  <% @myhasha.each do |champ| %>
   <tr>
-	  <td> <%= champ %> </td>
-	  <td> <%= champ %> </td>
+    <td style="background-color:#F79F81;"> <%= champ[1]['name'] %> </td>
+    <td> <%= champ[1]['stats']['armor'] %></td>
+    <td> <%= champ[1]['stats']['armorperlevel'] %></td>
+    <td> <%= champ[1]['stats']['attackdamage'] %></td>
+    <td> <%= champ[1]['stats']['attackdamageperlevel'] %></td>
+    <td> <%= champ[1]['stats']['attackrange'] %></td>
+    <td> <%= champ[1]['stats']['attackspeedoffset'] %></td>
+    <td> <%= champ[1]['stats']['attackspeedperlevel'] %></td>
+    <td> <%= champ[1]['stats']['crit'] %></td>
+    <td> <%= champ[1]['stats']['critperlevel'] %></td>
+    <td> <%= champ[1]['stats']['hp'] %></td>
+    <td> <%= champ[1]['stats']['hpperlevel'] %></td>
+    <td> <%= champ[1]['stats']['hpregen'] %></td>
+    <td> <%= champ[1]['stats']['hpregenperlevel'] %></td>
+    <td> <%= champ[1]['stats']['movespeed'] %></td>
+    <td> <%= champ[1]['stats']['mp'] %></td>
+    <td> <%= champ[1]['stats']['mpperlevel'] %></td>
+    <td> <%= champ[1]['stats']['mpregen'] %></td>
+    <td> <%= champ[1]['stats']['mpregenperlevel'] %></td>
+    <td> <%= champ[1]['stats']['spellblock'] %></td> 
+    <td> <%= champ[1]['stats']['spellblockperlevel'] %></td>
   </tr>
 <% end %>
 
