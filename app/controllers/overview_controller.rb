@@ -15,6 +15,7 @@ class OverviewController < ApplicationController
   def index
 
     conn = Faraday.new(url, request: {open_timeout: 1, timeout: 1}) do |c|
+      c.use Faraday::HttpCache, store: Rails.cache, logger: Rails.logger
       c.use FaradayMiddleware::ParseJson,       content_type: 'application/json'
       c.use Faraday::Response::Logger     # log request & response to STDOUT
       c.use Faraday::Adapter::NetHttp     # perform requests with Net::HTTP

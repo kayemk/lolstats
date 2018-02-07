@@ -33,6 +33,7 @@ gem 'redis-rails'
 gem 'redis-rack-cache'
 gem 'faraday'
 gem 'faraday_middleware'
+gem 'faraday-http-cache'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', groups: [:development, :test]
