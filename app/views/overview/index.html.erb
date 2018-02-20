@@ -14,11 +14,12 @@
 </p>
 
 <ul>
-  <#% @my_hasha.each do |dataz| %>
+  <#% @hash.each do |dataz| %>
   <li><#%= dataz %> </li>
   <#% end %>
 </ul>
 -->
+
 <div style="width:100%;height:30px;background-color:#F79F81;">
 </div>
 
@@ -46,7 +47,7 @@
     <th>spellblock</th> 
     <th>spellblockperlevel</th>
   </tr>
-  <% @myhasha.each do |champ| %>
+  <% @hash.each do |champ| %>
   <tr>
     <td style="background-color:#F79F81;"> <%= champ[1]['name'] %> </td>
     <td> <%= champ[1]['stats']['armor'] %></td>
