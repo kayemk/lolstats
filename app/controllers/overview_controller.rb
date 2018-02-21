@@ -1,6 +1,8 @@
-require 'faraday'
 require 'dotenv/load'
+#require 'active_support'
+require 'faraday'
 #require 'faraday_middleware'
+#require 'faraday-http-cache'
 
 class OverviewController < ApplicationController
 
@@ -14,15 +16,10 @@ class OverviewController < ApplicationController
 
   def index
     conn = Faraday.new(url, request: {open_timeout: 5, timeout: 5}) do |c|
-      c.use Faraday::HttpCache, logger: ActiveSupport::Logger.new(STDOUT)
-      #c.use FaradayMiddleware::ParseJson, content_type: 'application/json'
-      #c.response :xml,  :content_type => /\bxml$/
       c.response :json, :content_type => /\bjson$/
-      # c.use Faraday::Response::Logger     # log request & response to STDOUT
       c.adapter Faraday.default_adapter
-      #c.use Faraday::Adapter::NetHttp     # perform requests with Net::HTTP
     end
-  #end
+
   response = conn.get url
   @hash = response.body['data']
 
