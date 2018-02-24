@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag "skeleton.css", "normalize.css" %>
+<%= favicon_link_tag 'favicon.png' %>
+
+<div style="margin-left:10px;">
+<h1>Overview of champions</h1>
+
+<p>
+  <%= @url_debug %>
+</p>
+
+<%= @hash %>
