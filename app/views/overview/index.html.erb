@@ -4,15 +4,16 @@
 <div style="margin-left:10px;">
 <h1>Overview of stats</h1>
 
-<div style="width:100%;height:30px;background-color:#F79F81;">
+<div style="width:100%;height:2px;background-color:#F79F81;">
 </div>
 
-<table>
+<table class="u-full-width">
+  <thead>
   <tr>
     <th>Champion</th>
     <th>armor</th>
     <th>armorperlevel</th>
-    <th>attackdamage<th>
+    <th>attackdamage</th>
     <th>attackdamageperlevel</th>
     <th>attackrange</th>
     <th>attackspeedoffset</th>
@@ -28,33 +29,36 @@
     <th>mpperlevel</th>
     <th>mpregen</th>
     <th>mpregenperlevel</th>
-    <th>spellblock</th> 
+    <th>spellblock</th>
     <th>spellblockperlevel</th>
   </tr>
+  </thead>
   <% @hash.each do |champ| %>
+  <tbody>
   <tr>
     <td style="background-color:#F79F81;"> <%= champ[1]['name'] %> </td>
-    <td> <%= champ[1]['stats']['armor'] %></td>
-    <td> <%= champ[1]['stats']['armorperlevel'] %></td>
-    <td> <%= champ[1]['stats']['attackdamage'] %></td>
-    <td> <%= champ[1]['stats']['attackdamageperlevel'] %></td>
-    <td> <%= champ[1]['stats']['attackrange'] %></td>
-    <td> <%= champ[1]['stats']['attackspeedoffset'] %></td>
-    <td> <%= champ[1]['stats']['attackspeedperlevel'] %></td>
-    <td> <%= champ[1]['stats']['crit'] %></td>
-    <td> <%= champ[1]['stats']['critperlevel'] %></td>
-    <td> <%= champ[1]['stats']['hp'] %></td>
-    <td> <%= champ[1]['stats']['hpperlevel'] %></td>
-    <td> <%= champ[1]['stats']['hpregen'] %></td>
-    <td> <%= champ[1]['stats']['hpregenperlevel'] %></td>
-    <td> <%= champ[1]['stats']['movespeed'] %></td>
-    <td> <%= champ[1]['stats']['mp'] %></td>
-    <td> <%= champ[1]['stats']['mpperlevel'] %></td>
-    <td> <%= champ[1]['stats']['mpregen'] %></td>
-    <td> <%= champ[1]['stats']['mpregenperlevel'] %></td>
-    <td> <%= champ[1]['stats']['spellblock'] %></td> 
-    <td> <%= champ[1]['stats']['spellblockperlevel'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['armor'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['armorperlevel'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['attackdamage'] %></td>
+    <td style="align:right;" class="tdb"> <%= champ[1]['stats']['attackdamageperlevel'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['attackrange'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['attackspeedoffset'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['attackspeedperlevel'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['crit'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['critperlevel'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['hp'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['hpperlevel'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['hpregen'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['hpregenperlevel'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['movespeed'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['mp'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['mpperlevel'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['mpregen'] %></td>
+    <td class="tdb"> <%= champ[1]['stats']['mpregenperlevel'] %></td>
+    <td class="tda"> <%= champ[1]['stats']['spellblock'] %></td> 
+    <td class="tdb"> <%= champ[1]['stats']['spellblockperlevel'] %></td>
   </tr>
+  <tbody>
 <% end %>
 
 </table>

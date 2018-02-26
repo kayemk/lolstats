@@ -8,7 +8,7 @@ require 'faraday'
 class StatsClient
 
   def api_key
-    ENV["LOLSTATS_API_KEY"]
+    ENV["API_KEY"]
   end
 
   def url
