@@ -1,0 +1,28 @@
+resources:
+- name: code
+  type: git
+  source:
+    uri: https://github.com/kayemk/lolstats.git
+    branch: develop
+    #private_key: |
+    #  -----BEGIN RSA PRIVATE KEY-----
+    #  -----END RSA PRIVATE KEY-----
+
+jobs:
+- name: test build
+  serial: true
+  plan:
+  - get: code
+  - task: test
+    file: lolstats/ci/build.yml
+    #trigger: true
+#  - task: build
+    #file: code/build.yml
+    #config:
+    #  platform: linux
+    #  image_resource:
+    #    type: docker-image
+    #    source: {repository: ubuntu}
+    #  run:
+    #    path: echo
+    #    args: ["Hey! Listen!"]
