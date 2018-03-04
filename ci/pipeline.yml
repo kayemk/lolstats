@@ -17,7 +17,6 @@ jobs:
     trigger: true
   - task: test
     file: lolstats/ci/build.yml
-    #trigger: true
 #  - task: build
     #file: code/build.yml
     #config:
