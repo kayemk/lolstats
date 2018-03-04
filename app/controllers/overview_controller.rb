@@ -29,7 +29,7 @@ end
 
 class OverviewController < ApplicationController
   def index
-    @hash = Rails.cache.fetch('data', expires_in: 15.minutes) do
+    @hash = Rails.cache.fetch('data', expires_in: 8.hours) do
       StatsClient.new.champs
     end
 

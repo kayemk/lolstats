@@ -1,5 +1,5 @@
 resources:
-- name: code
+- name: lolstats
   type: git
   source:
     uri: https://github.com/kayemk/lolstats.git
@@ -12,7 +12,9 @@ jobs:
 - name: test build
   serial: true
   plan:
-  - get: code
+  - get: lolstats
+    resource: lolstats
+    trigger: true
   - task: test
     file: lolstats/ci/build.yml
     #trigger: true
