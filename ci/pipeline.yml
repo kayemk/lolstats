@@ -9,16 +9,18 @@ resources:
     #  -----END RSA PRIVATE KEY-----
 
 jobs:
-- name: test build
+- name: Install Dependencies
   serial: true
   plan:
   - get: lolstats
     resource: lolstats
 #    trigger: true
+- name: Run Tests
+  plan:
+  - get: lolstats
+    passed: [Install Dependencies]
   - task: test
     file: lolstats/ci/build.yml
-#  - task: build
-    #file: code/build.yml
     #config:
 
     #  platform: linux
