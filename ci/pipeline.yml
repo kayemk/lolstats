@@ -19,6 +19,7 @@ jobs:
   plan:
   - get: lolstats
     passed: [Install-Dependencies]
+    trigger: true
   - task: test
     file: lolstats/ci/build.yml
     params:
