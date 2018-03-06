@@ -9,18 +9,20 @@ resources:
     #  -----END RSA PRIVATE KEY-----
 
 jobs:
-- name: Install Dependencies
+- name: Install-Dependencies
   serial: true
   plan:
   - get: lolstats
     resource: lolstats
-#    trigger: true
-- name: Run Tests
+    trigger: true
+- name: Run-Tests
   plan:
   - get: lolstats
-    passed: [Install Dependencies]
+    passed: [Install-Dependencies]
   - task: test
     file: lolstats/ci/build.yml
+    params:
+      LOLAPIKEY: ((api))
     #config:
 
     #  platform: linux
