@@ -8,7 +8,8 @@ require 'faraday'
 class StatsClient
 
   def api_key
-    ENV["LOLAPIKEY"]
+   #ENV["LOLAPIKEY"]
+   "RGAPI-06acd281-2c9a-413e-af33-cb3b1a665e70"
   end
 
   def url
