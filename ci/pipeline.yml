@@ -9,22 +9,31 @@ resources:
     #  -----END RSA PRIVATE KEY-----
 
 jobs:
-- name: Install-Dependencies
+- name: Get-Repository
   serial: true
   plan:
   - get: lolstats
     resource: lolstats
     trigger: true
-- name: Run-Tests
+- name: Build
   plan:
   - get: lolstats
-    passed: [Install-Dependencies]
+    passed: [Get-Repository]
     trigger: true
-  - task: test
+  - task: build
     file: lolstats/ci/build.yml
     params:
       LOLAPIKEY: ((api))
-    #config:
+- name: Test
+  plan:
+  - get: lolstats
+    passed: [Build]
+    trigger: true
+  - task: test
+    file: lolstats/ci/test.yml
+    params:
+      LOLAPIKEY: ((api))
+#config:
 
     #  platform: linux
     #  image_resource:

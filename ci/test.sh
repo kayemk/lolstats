@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e -x
 
 pushd lolstats
-  bundle install
-  bundle exec rspec
-  #bundle exec rake test
-  bin/rake test
+  #bundle exec rspec
+  bundle exec rake test
+  #bin/rake test
 popd

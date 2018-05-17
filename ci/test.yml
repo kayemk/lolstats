@@ -11,4 +11,4 @@ inputs:
 - name: lolstats
 
 run:
-  path: ./lolstats/ci/build.sh
+  path: ./lolstats/ci/test.sh
