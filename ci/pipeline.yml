@@ -1,5 +1,5 @@
 resources:
-- name: lolstats-staging-
+- name: lolstats-staging
   type: git
   source:
     uri: https://github.com/kayemk/lolstats.git
@@ -32,7 +32,7 @@ jobs:
       LOLAPIKEY: ((api))
 - name: Test
   plan:
-  - get: lolstats
+  - get: lolstats-staging
     passed: [Build]
     trigger: true
   - task: test
@@ -41,11 +41,10 @@ jobs:
       LOLAPIKEY: ((api))
 - name: deploy
   plan:
-  - get: lolstats
+  - get: lolstats-staging
     passed: [Test]
     trigger: true
-  - task: deploy
-    put: lolstats-production
+  - put: lolstats-production
     params: {repository: lolstats}
 #    config:
 #      platform: linux
