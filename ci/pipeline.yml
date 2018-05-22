@@ -45,7 +45,7 @@ jobs:
     passed: [Test]
     trigger: true
   - put: lolstats-production
-    params: {repository: lolstats}
+    #params: {repository: lolstats}
 #    config:
 #      platform: linux
 #      image_resource:
