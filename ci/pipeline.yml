@@ -24,15 +24,15 @@ jobs:
     file: lolstats/ci/build.yml
     params:
       LOLAPIKEY: ((api))
-#- name: Test
-#  plan:
-#  - get: lolstats
-#    passed: [Build]
-#    trigger: true
-#  - task: test
-#    file: lolstats/ci/test.yml
-#    params:
-#      LOLAPIKEY: ((api))
+- name: Test
+  plan:
+  - get: lolstats
+    passed: [Build]
+    trigger: true
+  - task: test
+    file: lolstats/ci/test.yml
+    params:
+      LOLAPIKEY: ((api))
 #    config:
 #      platform: linux
 #      image_resource:
