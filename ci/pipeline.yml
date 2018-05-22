@@ -32,7 +32,7 @@ jobs:
       LOLAPIKEY: ((api))
 - name: Test
   plan:
-  - get: lolstats-staging
+  - get: lolstats
     passed: [Build]
     trigger: true
   - task: test
@@ -41,12 +41,12 @@ jobs:
       LOLAPIKEY: ((api))
 - name: deploy
   plan:
-  - get: lolstats-staging
+  - get: lolstats
     passed: [Test]
     trigger: true
   - task: deploy
     put: lolstats-production
-    params: {repository: lolstats-staging}
+    params: {repository: lolstats}
 #    config:
 #      platform: linux
 #      image_resource:
