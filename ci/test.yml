@@ -8,7 +8,7 @@ image_resource:
     tag: 2.4.2
 
 inputs:
-- name: lolstats
+- name: lolstats-staging
 
 run:
   path: ./lolstats/ci/test.sh

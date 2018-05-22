@@ -1,5 +1,5 @@
 resources:
-- name: lolstats
+- name: lolstats-staging-
   type: git
   source:
     uri: https://github.com/kayemk/lolstats.git
@@ -7,17 +7,23 @@ resources:
     #private_key: |
     #  -----BEGIN RSA PRIVATE KEY-----
     #  -----END RSA PRIVATE KEY-----
+- name: lolstats-production
+  type: git
+  source:
+    uri: https://github.com/kayemk/lolstats.git
+    branch: master
+    #private_key: |
 
 jobs:
 - name: Get-Repository
   serial: true
   plan:
-  - get: lolstats
-    resource: lolstats
+  - get: lolstats-staging
+    resource: lolstats-staging
     trigger: true
 - name: Build
   plan:
-  - get: lolstats
+  - get: lolstats-staging
     passed: [Get-Repository]
     trigger: true
   - task: build
@@ -26,13 +32,21 @@ jobs:
       LOLAPIKEY: ((api))
 - name: Test
   plan:
-  - get: lolstats
+  - get: lolstats-staging
     passed: [Build]
     trigger: true
   - task: test
     file: lolstats/ci/test.yml
     params:
       LOLAPIKEY: ((api))
+- name: deploy
+  plan:
+  - get: lolstats-staging
+    passed: [Test]
+    trigger: true
+  - task: deploy
+    put: lolstats-production
+    params: {repository: lolstats-staging}
 #    config:
 #      platform: linux
 #      image_resource:
@@ -40,5 +54,5 @@ jobs:
 #      source: {repository: ubuntu}
 #
 #      run:
-#        path: ./lolstats/ci/build.sh
+#        path: ./lolstats-staging/ci/build.sh
 #    #    args: ["Hey! Listen!"]

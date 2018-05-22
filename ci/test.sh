@@ -4,6 +4,7 @@ set -e -x
 
 pushd lolstats
   #bundle exec rspec
+  bundle install
   bundle exec rake test
   #bin/rake test
 popd
