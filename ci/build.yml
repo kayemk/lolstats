@@ -1,8 +1,7 @@
-buildform: linux
+platform: linux
 
 image_resource:
   type: docker-image
-  #source: {repository: busybox}
   source:
     repository: ruby
     tag: 2.4.2
