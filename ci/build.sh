@@ -2,6 +2,6 @@
 
 set -e -x
 
-pushd lolstats
+pushd lolstats-staging
   bundle install
 popd

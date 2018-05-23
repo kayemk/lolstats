@@ -2,7 +2,7 @@
 
 set -e -x
 
-pushd lolstats
+pushd lolstats-staging
   #bundle exec rspec
   bundle install
   bundle exec rake test
