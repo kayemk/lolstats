@@ -11,4 +11,4 @@ inputs:
 - name: lolstats-staging
 
 run:
-  path: ci/test.sh
+  path: ./lolstats/ci/test.sh

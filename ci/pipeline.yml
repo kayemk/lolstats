@@ -27,7 +27,7 @@ jobs:
     passed: [Get-Repository]
     trigger: true
   - task: build
-    file: lolstats/ci/build.yml
+    file: lolstats-staging/ci/build.yml
     params:
       LOLAPIKEY: ((api))
 - name: Test
