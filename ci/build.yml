@@ -10,4 +10,4 @@ inputs:
 - name: lolstats-staging
 
 run:
-  path: ./lolstats/ci/build.sh
+  path: ./lolstats-staging/ci/build.sh
