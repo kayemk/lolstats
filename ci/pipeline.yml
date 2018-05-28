@@ -21,6 +21,10 @@ jobs:
   - get: lolstats-staging
     resource: lolstats-staging
     trigger: true
+- name: Check
+  plan:
+  - task: check
+    file: lolstats-staging/ci/check.yml
 - name: Build
   plan:
   - get: lolstats-staging

@@ -10,4 +10,10 @@ inputs:
 - name: lolstats-staging
 
 run:
-  path: ./lolstats-staging/ci/build.sh
+  path: sh
+  args:
+  - -exc
+  - |
+    whoami
+    env
+    ruby --version
