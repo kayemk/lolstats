@@ -12,8 +12,8 @@ resources:
   source:
     uri: https://github.com/kayemk/lolstats.git
     branch: master
-    private_key: |
-              ((github_PRIVATE_KEY))
+    private_key: ((github_PRIVATE_KEY))
+
 jobs:
 - name: Get-Repository
   serial: true
@@ -53,7 +53,7 @@ jobs:
     trigger: true
 #    file: lolstats-staging/ci/deploy.yml
   - put: lolstats-production
-    params: {repository: lolstats-production}
+    params: {repository: lolstats-staging}
 #    config:
 #      source: {repository: ubuntu}
 #
