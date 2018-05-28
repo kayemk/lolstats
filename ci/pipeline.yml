@@ -10,7 +10,7 @@ resources:
 - name: lolstats-production
   type: git
   source:
-    uri: https://github.com/kayemk/lolstats.git
+    uri: git@github.com:kayemk/lolstats.git
     branch: master
     private_key: ((github_PRIVATE_KEY))
 
