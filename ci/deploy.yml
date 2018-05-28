@@ -9,4 +9,5 @@ image_resource:
 inputs:
 - name: lolstats-staging
 
-run: ./lolstats-staging/ci/deploy.sh
+run:
+  path: ./lolstats-staging/ci/deploy.sh
