@@ -44,12 +44,10 @@ jobs:
   - get: lolstats-staging
     passed: [Test]
     trigger: true
+#    file: lolstats-staging/ci/deploy.yml
   - put: lolstats-production
     #params: {repository: lolstats}
 #    config:
-#      platform: linux
-#      image_resource:
-#      type: docker-image
 #      source: {repository: ubuntu}
 #
 #      run:

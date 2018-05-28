@@ -1,0 +1,4 @@
+inputs:
+- name: lolstats-staging
+
+run: ./lolstats-staging/ci/deploy.sh
