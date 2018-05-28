@@ -23,6 +23,9 @@ jobs:
     trigger: true
 - name: Check
   plan:
+  - get: lolstats-staging
+    passed: [Get-Repository]
+    trigger: true
   - task: check
     file: lolstats-staging/ci/check.yml
 - name: Build
