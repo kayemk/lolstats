@@ -4,7 +4,7 @@ resources:
   source:
     uri: https://github.com/kayemk/lolstats.git
     branch: develop
-    #private_key: |
+    # private_key: |
     #  -----BEGIN RSA PRIVATE KEY-----
     #  -----END RSA PRIVATE KEY-----
 - name: lolstats-production
