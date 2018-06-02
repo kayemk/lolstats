@@ -52,7 +52,7 @@ jobs:
     passed: [Test]
     trigger: true
   #- task: git
-  #  var: k file: lolstats-staging/ci/deploy.yml
+  #  var: file: lolstats-staging/ci/deploy.yml
   - put: lolstats-production
     params: {repository: lolstats-staging}
 #    config:
