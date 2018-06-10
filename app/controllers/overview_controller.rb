@@ -5,6 +5,7 @@ require 'faraday'
 #require 'faraday-http-cache'
 
 #class OverviewController < ApplicationController
+#class is actually only for api connection
 class StatsClient
 
   def api_key
