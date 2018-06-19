@@ -37,6 +37,15 @@ jobs:
     file: lolstats-staging/ci/build.yml
     params:
       APIKEY: ((api))
+- name: Test without Build
+  plan:
+  - get: lolstats-staging
+    passed: [Get-Repository]
+    trigger: true
+  - task: test-without-build
+    file: lolstats-staging/ci/twb.yml
+    params:
+      APIKEY: ((api))
 - name: Test
   plan:
   - get: lolstats-staging
