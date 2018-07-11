@@ -1,3 +1,8 @@
+resource_types:
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource
 resources:
 - name: lolstats-staging
   type: git
@@ -13,7 +18,11 @@ resources:
     uri: git@github.com:kayemk/lolstats.git
     branch: master
     private_key: ((github_PRIVATE_KEY))
-
+- name: notify
+  type: slack-notification
+  source:
+    url: ((slack-webhook))
+# Jobs
 jobs:
 - name: Get-Repository
   serial: true
