@@ -1,8 +1,3 @@
-resource_types:
-- name: slack-notification
-  type: docker-image
-  source:
-    repository: cfcommunity/slack-notification-resource
 resources:
 - name: lolstats-staging
   type: git
