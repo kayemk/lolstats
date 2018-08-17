@@ -27,7 +27,7 @@ class StatsClient
   response.body['data']
   end
 end
-# Controller tT
+
 class OverviewController < ApplicationController
   def index
     @hash = Rails.cache.fetch('data', expires_in: 8.hours) do

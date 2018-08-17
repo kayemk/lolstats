@@ -13,11 +13,11 @@ resources:
     uri: git@github.com:kayemk/lolstats.git
     branch: master
     private_key: ((github_PRIVATE_KEY))
-- name: notify
-  type: slack-notification
-  source:
-    url: ((slack-webhook))
-# Jobs
+#- name: notify
+#  type: slack-notification
+#  source:
+#    url: ((slack-webhook))
+## Jobs
 jobs:
 - name: Get-Repository
   serial: true
@@ -59,18 +59,17 @@ jobs:
     file: lolstats-staging/ci/test.yml
     params:
       APIKEY: ((api))
-- name: deploy
+- name: Push to Master
   plan:
   - get: lolstats-staging
     passed: [Test]
     trigger: true
-  #- task: git
-  #  var: file: lolstats-staging/ci/deploy.yml
   - put: lolstats-production
     params: {repository: lolstats-staging}
-#    config:
-#      source: {repository: ubuntu}
-#
-#      run:
-#        path: ./lolstats-staging/ci/build.sh
-#    #    args: ["Hey! Listen!"]
+- name: Deploy
+  plan:
+  - get: lolstats-staging
+    passed: [Test]
+    trigger: true
+  #- put: lolstats-production
+  #  params: {repository: lolstats-staging}
