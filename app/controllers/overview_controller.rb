@@ -1,6 +1,9 @@
-require 'dotenv/load'
+#require 'dotenv/load'
 #require 'active_support'
+require 'net/http'
+require 'net/https'
 require 'faraday'
+require 'json'
 #require 'faraday_middleware'
 #require 'faraday-http-cache'
 
@@ -12,9 +15,35 @@ class StatsClient
    ENV["APIKEY"]
   end
 
-  def url
-    "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=stats&dataById=false&api_key="+api_key
+  def live_version
+    uri = URI('https://ddragon.leagueoflegends.com/api/versions.json')
+
+    # Create client
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+  # Create Request
+    json = Net::HTTP::Get.new(uri)
+
+  # Fetch Request
+    res = http.request(json)
+    result = JSON.parse(res.body)
+    puts "Response HTTP Status Code: #{res.code}"
+    #puts "Response HTTP Response Body: #{res.body}"
+    puts result[0]
+  rescue StandardError => e
+    puts "HTTP Request failed (#{e.message})"
   end
+
+  def url
+    "http://ddragon.leagueoflegends.com/cdn/8.12.1/data/en_GB/champion.json"
+#    "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=stats&dataById=false&api_key="+api_key
+  end
+
+  #def imgurl
+  #  "http://ddragon.leagueoflegends.com/cdn/"+live_version"/img/champion/"
+  #end
 
   def champs
     conn = Faraday.new(url, request: {open_timeout: 5, timeout: 5}) do |c|
@@ -27,6 +56,8 @@ class StatsClient
   response.body['data']
   end
 end
+
+
 
 class OverviewController < ApplicationController
   def index

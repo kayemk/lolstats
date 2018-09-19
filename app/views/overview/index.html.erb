@@ -36,7 +36,7 @@
   <% @hash.each do |champ| %>
   <tbody>
   <tr>
-    <td style="background-color:#F79F81;"> <%= image_tag("http://ddragon.leagueoflegends.com/cdn/8.12.1/img/champion/#{ champ[1]['key'] }.png", size: "30x30") %> <%= champ[1]['name'] %> </td>
+    <td style="background-color:#F79F81;"> <%= image_tag("http://ddragon.leagueoflegends.com/cdn/8.12.1/img/champion/#{ champ[1]['id'] }.png", size: "30x30") %> <%= champ[1]['name'] %> </td>
     <td class="tda"> <%= champ[1]['stats']['armor'] %> </td>
     <td class="tdb"> <%= champ[1]['stats']['armorperlevel'] %></td>
     <td class="tda"> <%= champ[1]['stats']['attackdamage'] %></td>
