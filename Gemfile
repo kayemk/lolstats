@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.1'
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'nokogiri', '~>1.8.2'
+gem 'nokogiri', '~>1.13.5'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
